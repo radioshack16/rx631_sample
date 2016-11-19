@@ -21,7 +21,7 @@ On power up, DFT and FFT functions are executed and processing time is shown via
 
   - performance summary
     ![FFT(real) performance summary](./FFT_real_performance_RX631_RX621_RX220.png)
-    For further details, see [20161117_FFT_performance_RX631_RX621_RX220.pdf](20161117_FFT_performance_RX631_RX621_RX220.pdf) and [20160514_FFT_performance_RX621_RX220.pdf](20160514_FFT_performance_RX621_RX220.pdf).
+    For further details, see [20161117_FFT_performance_RX631_RX621_RX220.pdf](20161117_FFT_performance_RX631_RX621_RX220.pdf).
  - For other RX621 or RX220 development board versions, see [https://github.com/radioshack16/rx621_sample](https://github.com/radioshack16/rx621_sample), or [https://github.com/radioshack16/rx220_sample](https://github.com/radioshack16/rx220_sample) projects.
 ------
 # License: MIT License  

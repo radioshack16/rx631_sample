@@ -20,12 +20,10 @@ On power up, DFT and FFT functions are executed and processing time is shown via
         a core function calls one of radix-specific functions depending on its input data count parameter M, and the called radix-specific function calls the core function to perform sub-M FFT.  
 
   - performance summary
-    ![FFT(real) performance summary](./FFT_real_performance.png)
-    For further details, see
-     [20161117_FFT_performance_RX631_RX621_RX220.pdf](20161117_FFT_performance_RX631_RX621_RX220.pdf]() file and
-     [https://github.com/radioshack16/rx621_sample/20160514_FFT_performance_on_RX621_RX220.pdf](20160514_FFT_performance_on_RX621_RX220.pdf).
- - For a RX621 development board version, see [https://github.com/radioshack16/rx621_sample](https://github.com/radioshack16/rx621_sample) project.
- - For a RX220 development board version, see [https://github.com/radioshack16/rx220_sample](https://github.com/radioshack16/rx220_sample) project.
+    ![FFT(real) performance summary](./FFT_real_performance_RX631_RX621_RX220.png)
+    For further details, see [20161117_FFT_performance_RX631_RX621_RX220.pdf](20161117_FFT_performance_RX631_RX621_RX220.pdf]() file and
+     [https://github.com/radioshack16/rx621_sample/blob/master/20160514_FFT_performance_on_RX621_RX220.pdf](20160514_FFT_performance_on_RX621_RX220.pdf).
+ - For other RX621 or RX220 development board versions, see [https://github.com/radioshack16/rx621_sample](https://github.com/radioshack16/rx621_sample), or [https://github.com/radioshack16/rx220_sample](https://github.com/radioshack16/rx220_sample) projects.
 ------
 # License: MIT License  
 - See the [LICENSE.txt](LICENSE.txt) file for details.

@@ -1,0 +1,5 @@
+-cpu=rx600
+-dbl_size=8
+-output="C:\githubwork\rx631_sample\rx631_sample\Release\rx631_sample.lib"
+-lang=c99
+-head=runtime,ctype,math,mathf,stdarg,stdio,stdlib,string

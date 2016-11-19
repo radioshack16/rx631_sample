@@ -1,0 +1,6 @@
+-cpu=rx600
+-dbl_size=8
+-lang=c99
+-output=obj="C:\githubwork\rx631_sample\rx631_sample\Release\util.obj"
+"C:\githubwork\rx631_sample\rx631_sample\util.c"
+-nologo

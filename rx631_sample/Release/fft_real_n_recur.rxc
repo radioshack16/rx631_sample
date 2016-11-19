@@ -1,0 +1,6 @@
+-cpu=rx600
+-dbl_size=8
+-lang=c99
+-output=obj="C:\githubwork\rx631_sample\rx631_sample\Release\fft_real_n_recur.obj"
+"C:\githubwork\rx631_sample\rx631_sample\fft_real_n_recur.c"
+-nologo

@@ -31,3 +31,9 @@
 # Debug files
 *.dSYM/
 *.su
+
+#
+*.swp
+*.abs
+rx631_sample.ARF
+rx631_sample/Debug

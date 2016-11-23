@@ -1,5 +1,7 @@
 # A hello-world C program for RX631
 A hello-world C program as a HEW project for Akizuki GR-CITRUS, RX631, board
+
+![Text ouput](./figs/20161123_term_hello_world.png)
 ![AKIZUKI-RX631 board photo](./figs/GR-CITRUS_AKIZUKI_RX631_crop.jpg)
 ------
 # Functions
@@ -20,8 +22,6 @@ A hello-world C program as a HEW project for Akizuki GR-CITRUS, RX631, board
 |TP1   | Port1/bit2 | CN1-3        |
 |DA1   | DAC ch1    | CN1-12       |
 
-# Serial output sample
-![Text ouput](./figs/20161123_term_hello_world.png)
 ------
 # License: MIT License  
 - See the [LICENSE.txt](LICENSE.txt) file for details.

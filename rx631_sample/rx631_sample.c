@@ -32,16 +32,13 @@
 //----------------------------------------
 
 #include "iodefine.h"
-//#include "typedefine.h"
 
 #include "util.h"           // tcnt_show(), ms_abs_count_show()
 #include "port.h"
 #include "tpu.h"
 #include "sci.h"
 #include "etc.h"
-#include "dft.h"
 #include "stack_var_adrs.h"
-#include "fft_real_n_recur.h"
 
 #ifdef __cplusplus
 //#include <ios>                        // Remove the comment when you use ios
@@ -65,149 +62,22 @@ void abort(void);
 
 void main(void)
 {
-//--------------------------------------------------------------------------------
-// For avoiding "L" section not found warning.
-char    dummy_s[] = "a";  // Literal for L section.
-while(dummy_s[0]!='a');
-//--------------------------------------------------------------------------------
-
-int ms_abs_count_prev;
-int dft_n;
-int dft_n_a[] = {6400, 5120, 4096, 2896, 2048, 1448, 1024, 724, 512, 360, 256, 180, 128, 88, 64, 44, 32, 20, 16, -1}; // must be a multiple of 4
-//int dft_n_a[] = {512, 360, 256, 180, 128, 88, 64, 44, 32, 20, 16, -1};  // must be a multiple of 4
-
+    SCIprintf("    \n");
+    SCIprintf("\n");
 
     SCIprintf("-----------------------------------\n");
     SCIprintf("GR-CITRUS, Akizuki RX631, 2016\n");
     SCIprintf("-----------------------------------\n");
-
-    //--------------------------------------------------------------------------------
-    // Show variable size
-    //--------------------------------------------------------------------------------
-    SCIprintf("sizeof(short) =%d\n", sizeof(short));
-    SCIprintf("sizeof(int)   =%d\n", sizeof(int));
-    SCIprintf("sizeof(int*)  =%d\n", sizeof(int*));
-    SCIprintf("sizeof(long)  =%d\n", sizeof(long));
-    SCIprintf("sizeof(float) =%d\n", sizeof(float));
     SCIprintf("sizeof(double)=%d\n", sizeof(double));
-    if (sizeof(short)!=2) {
-        SCIprintf("WARNING: sizeof(short)!=2.\n");
-    }
-    if (sizeof(double)!=8) {
-        SCIprintf("WARNING: sizeof(double)!=8.\n");
-    }
-    //--------------------------------------------------------------------------------
-    dft_address_show();
-    fft_address_show();
-    //--------------------------------------------------------------------------------
-    stack_var_adrs_min_show();
-    stack_var_adrs_min_update();
-    stack_var_adrs_min_show();
+    SCIprintf("\n");
+    SCIprintf("Hello, world.\n");
 
     //--------------------------------------------------------------------------------
-    // TPU/ch3 TCNT test
-    SCIprintf("TPU/ch3 TCNT test--------------------\n");
-    for (int i=0;i<8;i++) {
-        ms_abs_count_prev = g_ms_abs_count;
-        while (g_ms_abs_count==ms_abs_count_prev);
-        ms_abs_count_prev = g_ms_abs_count;
-        tcnt_restart();
-
-        while (g_ms_abs_count==ms_abs_count_prev);
-        tcnt_show("test", 1);
-    }
-
+    // Main loop
     //--------------------------------------------------------------------------------
-    // DFT/FFT test
-switch(0) {
-    case 0:
-        //--------------------------------------------------------------------------------
-        // Test of FFT over dft_n(>128), using auto-generated radix
-        // dft_n = 12600;  // RX631, float
-        dft_n = 6400;   // RX631, double
-        // dft_n = 4096;   // RX621, float
-        // dft_n = 2048;   // RX621, double
-        for (;dft_n>=16;dft_n-=4) {
-            fft_real_n_init(dft_n);
-            if (g_fft_init_status!=0) {
-                // SCIprintf("fft_real_n_init(dft_n=%d) fail: g_fft_init_status=%d\n", dft_n, g_fft_init_status);
-                continue; // Skip if FFT can not be performed.
-            }
-            dft_init(dft_n);
-            int mon_sw = 0; // 1
-            //dft_test(0, 1);       // DFT RAW
-            //dft_test(1, 0);       // DFT with cos/sin table
-            dft_test(2, mon_sw);    // FFT
-            stack_var_adrs_min_show();
-        }
-        break;
-    case 1:
-        //--------------------------------------------------------------------------------
-        // Test of DFT
-        for (int i=0;dft_n_a[i]>=16;i++) {
-            dft_n = dft_n_a[i];
-            if (dft_n%4!=0) {
-                SCIprintf("dft_n=%d, dft_n%%4=%d, fail. skipped.\n", dft_n, dft_n%4);
-                continue;
-            }
-            dft_init(dft_n);
-            int mon_sw = 0; // 1
-            dft_test(1, mon_sw);    // DFT with cos/sin table
-            stack_var_adrs_min_show();
-        }
-        break;
-    default:
-    case 8:
-        //--------------------------------------------------------------------------------
-        // Test of FFT over dft_n, using radix default
-        for (dft_n=128;dft_n>=16;dft_n-=4) {
-            dft_init(dft_n);
-            fft_real_n_init(dft_n);
-            //dft_test(0, 1);     // DFT RAW
-            dft_test(1, 0);     // DFT with cos/sin table
-            if (fft_real_default_n_available(dft_n)) {
-                dft_test(2, 0);     // FFT
-            }
-            stack_var_adrs_min_show();
-        }
-        break;
-    case 9:
-        //--------------------------------------------------------------------------------
-        // FFT Tests over radix presets (for deciding radix default)
-        //dft_n_prev = 0;
-        for (int i=0;i<=127;i++) {
-            int preset_no = i;
-            //--------------------------------------------------------------------------------
-            fft_real_init_by_preset(preset_no);
-            dft_n = fft_real_get_npoint();
-            dft_init(dft_n);
-            // fft_real_radix_preset_tbl_mon(-1);   // -1: show all
-
-            //if (dft_n==dft_n_prev) continue;
-            //dft_test(0, 0);  // DFT RAW
-            //dft_test(1, 0);  // DFT with cos/sin table
-            fft_real_radix_preset_tbl_mon(preset_no, 0);
-            // fft_real_radix_tbl_mon();
-            dft_test(2, 0);     // 2:FFT, 1: show result
-            //dft_n_prev = dft_n;
-            stack_var_adrs_min_show();
-        }
-        break;
-}
-
-    //--------------------------------------------------------------------------------
-    // Test
-    //--------------------------------------------------------------------------------
-    int d       = 0;
-    int d_prev  = 0;
 	while(1) {
-        d = (g_ms_count>800) ? 1 : 0;
-        g_led1  = d;
-        if (d==1 && d_prev==0) {
-            SCIprintf("g_ms_abs_count   = %d:", g_ms_abs_count);
-            SCIprintf(" g_dac1_u10 = %d\n", g_dac1_u10);   // DEBUG
-        }
-        d_prev = d;
+        g_led1 = (g_ms_count>800) ? 1 : 0;  // g_ms_count is updated in the intprg.c/Excep_TPU0_TGIA0()
+                                            // interrupt function every 1ms.
     }
 }
 

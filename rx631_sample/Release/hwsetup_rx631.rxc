@@ -1,6 +1,6 @@
 -cpu=rx600
 -dbl_size=8
 -lang=c99
--output=obj="C:\githubwork\rx631_sample\rx631_sample\Release\hwsetup_rx631.obj"
-"C:\githubwork\rx631_sample\rx631_sample\hwsetup_rx631.c"
+-output=obj="C:\hewwork\rx631_sample\rx631_sample\Release\hwsetup_rx631.obj"
+"C:\hewwork\rx631_sample\rx631_sample\hwsetup_rx631.c"
 -nologo

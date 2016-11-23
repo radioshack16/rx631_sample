@@ -1,6 +1,6 @@
 -cpu=rx600
 -dbl_size=8
 -lang=c99
--output=obj="C:\githubwork\rx631_sample\rx631_sample\Release\fft_n_small.obj"
-"C:\githubwork\rx631_sample\rx631_sample\fft_n_small.c"
+-output=obj="C:\hewwork\rx631_sample\rx631_sample\Release\fft_n_small.obj"
+"C:\hewwork\rx631_sample\rx631_sample\fft_n_small.c"
 -nologo

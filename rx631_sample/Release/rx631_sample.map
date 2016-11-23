@@ -1,4 +1,4 @@
-Optimizing Linkage Editor (V.10.02.00.000)        19-Nov-2016 15:00:05
+Optimizing Linkage Editor (V.10.02.00.000)        23-Nov-2016 19:29:29
 
 *** Options ***
 
@@ -14,11 +14,7 @@ Optimizing Linkage Editor (V.10.02.00.000)        19-Nov-2016 15:00:05
 -input="C:\githubwork\rx631_sample\rx631_sample\Release\clock.obj"
 -input="C:\githubwork\rx631_sample\rx631_sample\Release\dac.obj"
 -input="C:\githubwork\rx631_sample\rx631_sample\Release\dbsct.obj"
--input="C:\githubwork\rx631_sample\rx631_sample\Release\dft.obj"
--input="C:\githubwork\rx631_sample\rx631_sample\Release\fft_n_small.obj"
--input="C:\githubwork\rx631_sample\rx631_sample\Release\fft_real_n_recur.obj"
 -input="C:\githubwork\rx631_sample\rx631_sample\Release\hwsetup.obj"
--input="C:\githubwork\rx631_sample\rx631_sample\Release\hwsetup_rx631.obj"
 -input="C:\githubwork\rx631_sample\rx631_sample\Release\intprg.obj"
 -input="C:\githubwork\rx631_sample\rx631_sample\Release\port.obj"
 -input="C:\githubwork\rx631_sample\rx631_sample\Release\resetprg.obj"
@@ -40,53 +36,53 @@ Optimizing Linkage Editor (V.10.02.00.000)        19-Nov-2016 15:00:05
 SECTION                            START      END         SIZE   ALIGN
 
 B_1
-                                  00001000  00002950      1951   1
+                                  00001000  0000104f        50   1
 R_1
-                                  00002951  000029a1        51   1
+                                  00001050  000010a0        51   1
 B_2
-                                  000029a2  000029a2         0   2
+                                  000010a2  000010a2         0   2
 R_2
-                                  000029a2  000029a2         0   2
+                                  000010a2  000010a2         0   2
 B
-                                  000029a4  0003e4c7     3bb24   4
+                                  000010a4  000014a7       404   4
 R
-                                  0003e4c8  0003e78b       2c4   4
+                                  000014a8  00001713       26c   4
 SU
-                                  0003e78c  0003f38b       c00   4
+                                  00001714  00002313       c00   4
 SI
-                                  0003f38c  0003f68b       300   4
+                                  00002314  00002613       300   4
 PResetPRG
                                   ffe00000  ffe00034        35   1
 C_1
-                                  ffe00100  ffe0065a       55b   1
+                                  ffe00100  ffe001d1        d2   1
 C_2
-                                  ffe0065c  ffe0085d       202   2
+                                  ffe001d2  ffe003d3       202   2
 C
-                                  ffe00860  ffe00a67       208   4
+                                  ffe003d4  ffe0045f        8c   4
 C$DSEC
-                                  ffe00a68  ffe00a8b        24   4
+                                  ffe00460  ffe00483        24   4
 C$BSEC
-                                  ffe00a8c  ffe00aa3        18   4
+                                  ffe00484  ffe0049b        18   4
 C$VECT
-                                  ffe00aa4  ffe00ea3       400   4
+                                  ffe0049c  ffe0089b       400   4
 D_1
-                                  ffe00ea4  ffe00ef4        51   1
+                                  ffe0089c  ffe008ec        51   1
 D_2
-                                  ffe00ef6  ffe00ef6         0   2
+                                  ffe008ee  ffe008ee         0   2
 D
-                                  ffe00ef8  ffe011bb       2c4   4
+                                  ffe008f0  ffe00b5b       26c   4
 P
-                                  ffe011bc  ffe076cd      6512   1
+                                  ffe00b5c  ffe03539      29de   1
 PIntPRG
-                                  ffe076ce  ffe078b1       1e4   1
+                                  ffe0353a  ffe03718       1df   1
 W_1
-                                  ffe078b2  ffe078b2         0   1
+                                  ffe03719  ffe03719         0   1
 W_2
-                                  ffe078b2  ffe078b2         0   2
+                                  ffe0371a  ffe0371a         0   2
 W
-                                  ffe078b4  ffe078b4         0   4
+                                  ffe0371c  ffe0371c         0   4
 L
-                                  ffe078b4  ffe08064       7b1   4
+                                  ffe0371c  ffe0385c       141   4
 $ADDR_C_FFFFFF80
                                   ffffff80  ffffff83         4   1
 FIXEDVECT

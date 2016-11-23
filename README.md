@@ -1,5 +1,6 @@
-# rx631_sample
-A Hello-world C program as a HEW project for Akizuki GR-CITRUS, RX631, board
+# A hello-world C program for RX631
+A hello-world C program as a HEW project for Akizuki GR-CITRUS, RX631, board
+![AKIZUKI-RX631 board photo](./figs/GR-CITRUS_AKIZUKI_RX631_crop.jpg)
 ------
 # Functions
 - TPU/ch0 generates interrupt every 1ms

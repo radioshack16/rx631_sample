@@ -24,6 +24,3 @@ On power up, DFT and FFT functions are executed and processing time is shown via
 # License: MIT License  
 - See the [LICENSE.txt](LICENSE.txt) file for details.
 
------
-Blog : <http://solar-club.jp/member/radioshack16/>
------
